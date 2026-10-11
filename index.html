@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ностальгия через фотографию</title>
+	<link rel="icon" type="image/jpeg" href="img/jpg/icon.jpg">
+
+	<link href="css/clear.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header class="header">
+		<div class="contentZone headerContent headerDesktop">
+			<nav class="navLeft">
+				<a class="navButton navButtonActive" href="index.html"><strong>Главная</strong></a>
+			</nav>
+
+			<nav class="navRight">
+				<a class="navButton" href="1.html">Ностальгия</a>
+				<a class="navButton" href="2.html">История</a>
+				<a class="navButton" href="3.html">Пленочная фотография</a>
+				<a class="navButton" href="4.html">Gaussian Splatting</a>
+				<a class="navButton" href="5.html">Литература</a>
+			</nav>
+		</div>
+
+		<div class="headerMobile">
+			<a class="mobileIconButton homeButton" href="index.html" aria-label="Главная">
+				<span></span>
+			</a>
+
+			<p class="mobilePageTitle">Главная</p>
+
+			<button class="mobileIconButton menuButton" id="menuButton" aria-label="Открыть меню">
+				<span></span>
+			</button>
+
+			<button class="mobileIconButton menuCloseButton" id="menuCloseButton" aria-label="Закрыть меню">
+				<span></span>
+			</button>
+		</div>
+
+		<nav class="mobileMenu" id="mobileMenu">
+			<a class="mobileMenuLink" href="1.html">Ностальгия</a>
+			<a class="mobileMenuLink" href="2.html">История</a>
+			<a class="mobileMenuLink" href="3.html">Пленочная фотография</a>
+			<a class="mobileMenuLink" href="4.html">Gaussian Splatting</a>
+			<a class="mobileMenuLink" href="5.html">Литература</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="heroSlider" aria-label="Главный слайдер">
+			<div class="heroTrack" id="heroTrack">
+				<article class="heroSlide activeSlide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)), url('img/jpg/banner1.jpg');">
+					<div class="contentZone">
+						<div class="heroTextZone">
+							<h1 class="heroTitle">Ностальгия</h1>
+							<p class="heroDescription">
+								Разбираемся, почему прошлое кажется приятнее настоящего, как работает ностальгия и какую роль в этом играют медиа и технологии.
+							</p>
+							<a class="heroButton" href="1.html">Читать</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="heroSlide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)), url('img/jpg/banner2.jpg');">
+					<div class="contentZone">
+						<div class="heroTextZone">
+							<h1 class="heroTitle">История способов сохранения воспоминаний</h1>
+							<p class="heroDescription">
+								Прослеживаем, как люди сохраняли память о своей жизни — от писем и альбомов до облачных архивов и цифровых сервисов.
+							</p>
+							<a class="heroButton" href="2.html">Читать</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="heroSlide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)), url('img/jpg/banner3.jpg');">
+					<div class="contentZone">
+						<div class="heroTextZone">
+							<h1 class="heroTitle">Пленочная фотография</h1>
+							<p class="heroDescription">
+								Объясняем, почему плёнка остаётся актуальной сегодня, чем она отличается от цифры и зачем к ней возвращаются в эпоху смартфонов.
+							</p>
+							<a class="heroButton" href="3.html">Читать</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="heroSlide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)), url('img/jpg/banner4.jpg');">
+					<div class="contentZone">
+						<div class="heroTextZone">
+							<h1 class="heroTitle">Gaussian Splatting</h1>
+							<p class="heroDescription">
+								Разбираем, как новая технология превращает обычные фотографии в реалистичные 3D-сцены и меняет способ сохранения воспоминаний.
+							</p>
+							<a class="heroButton" href="4.html">Читать</a>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="sliderControls">
+			<div class="contentZone controlsContent">
+				<button class="sliderArrow sliderArrowPrev" id="prevSlide" aria-label="Предыдущий баннер">
+					<span></span>
+				</button>
+
+				<div class="sliderDots" id="sliderDots" aria-label="Индикаторы баннера">
+					<button class="sliderDot activeDot" aria-label="Показать первый баннер"></button>
+					<button class="sliderDot" aria-label="Показать второй баннер"></button>
+					<button class="sliderDot" aria-label="Показать третий баннер"></button>
+					<button class="sliderDot" aria-label="Показать четвертый баннер"></button>
+				</div>
+
+				<button class="sliderArrow sliderArrowNext" id="nextSlide" aria-label="Следующий баннер">
+					<span></span>
+				</button>
+			</div>
+		</section>
+
+		<section class="mainTextBlock">
+			<div class="contentZone">
+				<div class="textColumn">
+					<h2 class="sectionTitle">О сайте</h2>
+
+					<p class="sectionText">
+						Это информационный сайт о памяти, ностальгии и способах сохранения воспоминаний. Здесь рассказываем, как люди фиксировали важные моменты в разные эпохи: через письма, дневники, семейные альбомы, плёночную фотографию, домашнее видео, цифровые архивы и современные 3D-технологии.<br><br>Разбираемся, почему человеку важно возвращаться к прошлому, как менялись носители памяти и как вместе с ними менялось отношение к воспоминаниям. Отдельное внимание уделяем плёночной фотографии, цифровой фиксации жизни и Gaussian Splatting — технологии, которая позволяет сохранять не только изображение, но и пространство события.
+					</p>
+
+				</div>
+			</div>
+		</section>
+
+		<section class="galleryBlock" aria-label="Галерея">
+			<div class="contentZone galleryContent">
+				<div class="galleryScroll">
+									
+					<figure class="galleryItem">
+						<img src="img/jpg/18.jpg" alt="Севкабель" class="galleryImage lightboxTrigger" data-full="img/jpg/18.jpg" data-caption="Канонерский остров" data-gallery="main-gallery">
+						<figcaption>Канонерский остров</figcaption>
+					</figure>
+					
+					<figure class="galleryItem">
+						<img src="img/jpg/73.jpg" alt="Севкабель" class="galleryImage lightboxTrigger" data-full="img/jpg/73.jpg" data-caption="Смотровая площадка Лахта-центра" data-gallery="main-gallery">
+						<figcaption>Смотровая площадка Лахта-центра</figcaption>
+					</figure>
+
+					<figure class="galleryItem">
+						<img src="img/jpg/76.jpg" alt="Севкабель" class="galleryImage lightboxTrigger" data-full="img/jpg/76.jpg" data-caption="Лес Канонерского острова" data-gallery="main-gallery">
+						<figcaption>Лес Канонерского острова</figcaption>
+					</figure>
+					
+					<figure class="galleryItem">
+						<img src="img/jpg/68.jpg" alt="Севкабель" class="galleryImage lightboxTrigger" data-full="img/jpg/68.jpg" data-caption="Вид с самого высокого здания Европы" data-gallery="main-gallery">
+						<figcaption>Вид с самого высокого здания Европы</figcaption>
+					</figure>
+					
+					<figure class="galleryItem">
+						<img src="img/jpg/8.jpg" alt="Севкабель" class="galleryImage lightboxTrigger" data-full="img/jpg/8.jpg" data-caption="Севкабель" data-gallery="main-gallery">
+						<figcaption>Севкабель</figcaption>
+					</figure>
+
+					<figure class="galleryItem">
+						<img src="img/jpg/9.jpg" alt="На пляже ночью" class="galleryImage lightboxTrigger" data-full="img/jpg/9.jpg" data-caption="На пляже ночью" data-gallery="main-gallery">
+						<figcaption>На пляже ночью</figcaption>
+					</figure>
+
+					<figure class="galleryItem">
+						<img src="img/jpg/14.jpg" alt="Лахта-центр" class="galleryImage lightboxTrigger" data-full="img/jpg/14.jpg" data-caption="Лахта-центр" data-gallery="main-gallery">
+						<figcaption>Лахта-центр</figcaption>
+					</figure>
+
+					<figure class="galleryItem">
+						<img src="img/jpg/70.jpg" alt="У подножья Лахта-центра" class="galleryImage lightboxTrigger" data-full="img/jpg/70.jpg" data-caption="У подножья Лахта-центра" data-gallery="main-gallery">
+						<figcaption>У подножья Лахта-центра</figcaption>
+					</figure>
+
+					<figure class="galleryItem">
+						<img src="img/jpg/71.jpg" alt="Набережная Обводного канала" class="galleryImage lightboxTrigger" data-full="img/jpg/71.jpg" data-caption="Набережная Обводного канала" data-gallery="main-gallery">
+						<figcaption>Набережная Обводного канала</figcaption>
+					</figure>
+
+					<figure class="galleryItem">
+						<img src="img/jpg/75.jpg" alt="Мыс Канонерского острова" class="galleryImage lightboxTrigger" data-full="img/jpg/75.jpg" data-caption="Мыс Канонерского острова" data-gallery="main-gallery">
+						<figcaption>Мыс Канонерского острова</figcaption>
+					</figure>
+
+					<figure class="galleryItem">
+						<img src="img/jpg/77.jpg" alt="Фонтанка" class="galleryImage lightboxTrigger" data-full="img/jpg/77.jpg" data-caption="Фонтанка" data-gallery="main-gallery">
+						<figcaption>Фонтанка</figcaption>
+					</figure>
+
+					<figure class="galleryItem">
+						<img src="img/jpg/81.jpg" alt="Ночью на Канонерском острове" class="galleryImage lightboxTrigger" data-full="img/jpg/81.jpg" data-caption="Ночью на Канонерском острове" data-gallery="main-gallery">
+						<figcaption>Ночью на Канонерском острове</figcaption>
+					</figure>
+
+					<figure class="galleryItem">
+						<img src="img/jpg/83.jpg" alt="В кафе у Лахта-центра" class="galleryImage lightboxTrigger" data-full="img/jpg/83.jpg" data-caption="В кафе у Лахта-центра" data-gallery="main-gallery">
+						<figcaption>В кафе у Лахта-центра</figcaption>
+					</figure>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="contentZone">
+			<div class="footerTextZone">
+				<p class="footerTitle">Ностальгия через фотографию</p>
+				<p class="footerCopy">© 2025–2026, Кучев Павел З-МД-20</p>
+			</div>
+		</div>
+	</footer>
+
+	<div class="lightbox" id="lightbox" aria-hidden="true">
+		<button class="lightboxClose" id="lightboxClose" aria-label="Закрыть изображение">×</button>
+
+		<button class="lightboxArrow lightboxArrowPrev" id="lightboxPrev" aria-label="Предыдущее изображение">
+			<span></span>
+		</button>
+
+		<div class="lightboxContent">
+			<img class="lightboxImage" id="lightboxImage" src="#" alt="">
+			<p class="lightboxCaption" id="lightboxCaption"></p>
+		</div>
+
+		<button class="lightboxArrow lightboxArrowNext" id="lightboxNext" aria-label="Следующее изображение">
+			<span></span>
+		</button>
+	</div>
+
+	<script src="js/main.js"></script>
+</body>
+</html>

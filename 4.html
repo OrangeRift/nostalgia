@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gaussian Splatting</title>
+	<link rel="icon" type="image/jpeg" href="img/jpg/icon.jpg">
+	
+	<link href="css/clear.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header class="header">
+		<div class="contentZone headerContent headerDesktop">
+			<nav class="navLeft"><a class="navButton" href="index.html">Главная</a></nav>
+			<nav class="navRight">
+				<a class="navButton" href="1.html">Ностальгия</a>
+				<a class="navButton" href="2.html">История</a>
+				<a class="navButton" href="3.html">Пленочная фотография</a>
+				<a class="navButton navButtonActive" href="4.html">Gaussian Splatting</a>
+				<a class="navButton" href="5.html">Литература</a>
+			</nav>
+		</div>
+		<div class="headerMobile">
+			<a class="mobileIconButton homeButton" href="index.html" aria-label="Главная"><span></span></a>
+			<p class="mobilePageTitle">Gaussian Splatting</p>
+			<button class="mobileIconButton menuButton" id="menuButton" aria-label="Открыть меню"><span></span></button>
+			<button class="mobileIconButton menuCloseButton" id="menuCloseButton" aria-label="Закрыть меню"><span></span></button>
+		</div>
+		<nav class="mobileMenu" id="mobileMenu">
+			<a class="mobileMenuLink" href="1.html">Ностальгия</a>
+			<a class="mobileMenuLink" href="2.html">История</a>
+			<a class="mobileMenuLink" href="3.html">Пленочная фотография</a>
+			<a class="mobileMenuLink" href="4.html">Gaussian Splatting</a>
+			<a class="mobileMenuLink" href="5.html">Литература</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="articleHero" style="background-image: linear-gradient(rgba(0,0,0,0.32), rgba(0,0,0,0.32)), url('img/jpg/banner4.jpg');">
+			<div class="contentZone"><div class="articleHeroTextZone"><h1 class="articleHeroTitle">Gaussian Splatting</h1></div></div>
+		</section>
+
+		<section class="articleBlock">
+			<div class="contentZone">
+				<div class="articleTextColumn">
+					<a class="backLink" href="index.html">&lt; Вернуться на главную</a>
+
+					<h2 class="articleTitle">Новый этап в сохранении реальности</h2>
+					<p class="articleText">Фотография фиксирует один ракурс. Видео сохраняет движение во времени. Однако оба формата остаются плоскими: зритель видит сцену так, как её увидела камера в конкретный момент. Современные технологии 3D-реконструкции предлагают другой подход — восстановление пространства целиком. Одной из самых обсуждаемых технологий последних лет стала Gaussian Splatting.<br><br>Если упростить, Gaussian Splatting позволяет построить реалистичную трёхмерную модель сцены на основе обычных фотографий или видеозаписей. Пользователь получает не просто изображение, а объёмную среду, которую можно рассматривать с разных точек зрения. Для задачи сохранения воспоминаний это означает переход от снимка к пространственной памяти.</p>
+					<figure class="articleFigure articleVideoFigure"><video class="articleVideo" autoplay muted loop playsinline><source src="vid/1.mp4" type="video/mp4"></video><figcaption>Gaussian Splatting</figcaption></figure>
+					
+					<h2 class="articleTitle">Что такое Gaussian Splatting</h2>
+					<p class="articleText">Метод был представлен исследователями Inria в 2023 году и быстро получил распространение в профессиональном сообществе <a class="articleCitationLink" href="https://learnopencv.com/3d-gaussian-splatting/" target="_blank" rel="noopener noreferrer">[12]</a><a class="articleCitationLink" href="https://habr.com/ru/articles/786064/" target="_blank" rel="noopener noreferrer">[13]</a>. Его основная идея заключается в том, что сцена представляется не привычной полигональной моделью, а набором трёхмерных гауссовых «пятен» – небольших объёмных элементов, описываемых математическими распределениями.<br><br>Каждый такой элемент хранит информацию о положении в пространстве, размере, форме, цвете и прозрачности. Вместо построения жёсткой сетки из треугольников алгоритм оптимизирует параметры множества этих элементов так, чтобы при проекции на плоскость камеры они совпадали с исходными фотографиями <a class="articleCitationLink" href="https://en.wikipedia.org/wiki/Gaussian_splatting" target="_blank" rel="noopener noreferrer">[14]</a>.<br><br>В результате получается плотное облако цветных объёмных компонентов, которое при визуализации выглядит как цельная сцена с глубиной, светом и текстурой.</p>
+					<figure class="articleFigure">
+						<img class="articleImage lightboxTrigger" src="img/jpg/g3.jpg" data-full="img/jpg/g3.jpg" data-caption="Облако точек" data-gallery="article-4" alt="Облако точек">
+						<figcaption>Облако точек</figcaption>
+					</figure>
+					
+					<h2 class="articleTitle">Почему метод оказался важным</h2>
+					<p class="articleText">До появления Gaussian Splatting одним из ключевых направлений в реконструкции сцен были Neural Radiance Fields (NeRF). Эти методы использовали нейронные сети для аппроксимации того, как сцена выглядит с разных ракурсов. Качество было высоким, но рендеринг часто требовал значительных вычислительных ресурсов.<br><br>Gaussian Splatting предложил альтернативу, сочетающую точность и высокую скорость визуализации. После этапа оптимизации полученную сцену можно отображать в реальном времени, что делает технологию пригодной для интерактивных приложений, включая VR и AR <a class="articleCitationLink" href="https://learnopencv.com/3d-gaussian-splatting/" target="_blank" rel="noopener noreferrer">[12]</a><a class="articleCitationLink" href="https://en.wikipedia.org/wiki/Gaussian_splatting" target="_blank" rel="noopener noreferrer">[14]</a>.<br><br>Именно скорость и относительная простота рендеринга сделали метод заметным шагом вперёд в развитии 3D-реконструкции.</p>
+					<figure class="articleFigure articleVideoFigure"><video class="articleVideo" autoplay muted loop playsinline><source src="vid/2.mp4" type="video/mp4"></video><figcaption>Gaussian Splatting</figcaption></figure>
+
+					<h2 class="articleTitle">Принцип работы на практическом примере</h2>
+					<p class="articleText">Представим, что у нас есть несколько десятков фотографий комнаты, снятых с разных углов. Алгоритм анализирует изображения и определяет, как распределить в пространстве тысячи маленьких гауссовых элементов так, чтобы при виртуальном «взгляде» из каждой исходной позиции получалось изображение, максимально близкое к фотографии.<br><br>Каждый элемент можно представить как полупрозрачное цветное облачко. Вместе они формируют структуру сцены. При смене ракурса система пересчитывает вклад каждого элемента в итоговое изображение, создавая эффект объёма.<br><br>Таким образом, сцена не хранится как набор плоских кадров, а как непрерывная пространственная структура.</p>
+					<figure class="articleFigure articleVideoFigure"><video class="articleVideo" autoplay muted loop playsinline><source src="vid/3.mp4" type="video/mp4"></video><figcaption>Возможности анимации</figcaption></figure>
+
+					<h2 class="articleTitle">Возможности технологии</h2>
+					<p class="articleText">Gaussian Splatting способен восстанавливать сложные сцены с высокой степенью реализма. Он хорошо работает с нерегулярными структурами — листвой, травой, деталями интерьера — которые трудно точно описать традиционной полигональной моделью <a class="articleCitationLink" href="https://learnopencv.com/3d-gaussian-splatting/" target="_blank" rel="noopener noreferrer">[12]</a>.<br><br>Метод масштабируется: возможно реконструировать как небольшие объекты, так и более крупные пространства, например помещения или фрагменты городской среды. Благодаря высокой скорости рендеринга такие сцены можно просматривать интерактивно.<br><br>Для задач сохранения воспоминаний это означает потенциальную возможность фиксировать не только изображение события, но и его пространство. Например, при достаточном количестве фотографий можно создать трёхмерную копию комнаты, в которой проходил важный момент жизни, и впоследствии «пройтись» по ней виртуально.</p>
+					<figure class="articleFigure articleVideoFigure"><video class="articleVideo" autoplay muted loop playsinline><source src="vid/4.mp4" type="video/mp4"></video><figcaption>Детали Gaussian Splatting</figcaption></figure>
+
+					<h2 class="articleTitle">Ограничения и технические сложности</h2>
+					<p class="articleText">Несмотря на впечатляющие результаты, технология имеет ограничения. Построение сцены требует значительных вычислительных ресурсов, особенно при большом количестве исходных изображений <a class="articleCitationLink" href="https://en.wikipedia.org/wiki/Gaussian_splatting" target="_blank" rel="noopener noreferrer">[14]</a>. Размер итоговой модели может быть достаточно крупным, что создаёт требования к памяти.<br><br>Кроме того, возможны артефакты: при недостатке данных или сложных световых условиях отдельные элементы могут отображаться некорректно. Динамические сцены — с движущимися объектами — требуют дополнительных модификаций алгоритма <a class="articleCitationLink" href="https://en.wikipedia.org/wiki/Gaussian_splatting" target="_blank" rel="noopener noreferrer">[14]</a>.<br><br>Тем не менее метод активно развивается, появляются улучшенные версии и расширения.</p>
+					<figure class="articleFigure">
+						<img class="articleImage lightboxTrigger" src="img/jpg/g2.jpg" data-full="img/jpg/g2.jpg" data-caption="Детали Gaussian Splatting" data-gallery="article-4" alt="Детали Gaussian Splatting">
+						<figcaption>Детали Gaussian Splatting</figcaption>
+					</figure>
+
+					<h2 class="articleTitle">Пространственная память и новые формы архива</h2>
+					<p class="articleText">С точки зрения культурной практики Gaussian Splatting интересен не только как инженерное решение, но и как новый формат сохранения прошлого. Если фотография фиксирует момент, а видео — последовательность моментов, то трёхмерная реконструкция сохраняет пространство события.<br><br>Это меняет характер воспоминания. Пользователь может сам выбирать ракурс, обращать внимание на детали, которые не были в центре внимания в момент съёмки. Архив становится интерактивным.<br><br>Подобный подход перекликается с развитием устройств пространственной записи, таких как системы, поддерживающие «spatial video» <a class="articleCitationLink" href="https://support.apple.com/guide/iphone/spatial-photos-record-videos-apple-vision-pro-iph6e3a6d4fe/ios" target="_blank" rel="noopener noreferrer">[10]</a>. Постепенно появляется возможность сохранять не только изображение, но и ощущение присутствия.</p>
+					<figure class="articleFigure articleVideoFigure"><video class="articleVideo" autoplay muted loop playsinline><source src="vid/5.mp4" type="video/mp4"></video><figcaption>Тренировка модели</figcaption></figure>
+
+					<h2 class="articleTitle">Будущее технологии</h2>
+					<p class="articleText">Можно предположить, что со временем методы трёхмерной реконструкции станут частью массовых устройств. Если процесс захвата и обработки упростится, создание 3D-сцен может стать таким же обычным действием, как сегодня съёмка фотографии.<br><br>Это открывает новые вопросы. Станет ли воспоминание более точным или, наоборот, более зависимым от технической интерпретации? Изменится ли эмоциональное переживание прошлого, если к нему можно «вернуться» в пространственном формате?<br><br>Пока эти вопросы остаются открытыми. Однако уже сейчас очевидно, что Gaussian Splatting представляет собой важный шаг в эволюции способов сохранения реальности. От плоского кадра к объёму — так постепенно меняется форма нашей памяти.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="articleEndBlock"><div class="contentZone"><div class="articleTextColumn"><h2 class="articleEndTitle">Стало интересно?</h2><p class="articleEndText">Больше материалов по теме — на главной странице сайта.</p><a class="articleMainButton" href="index.html">На главную</a></div></div></section>
+	</main>
+
+	<footer class="footer"><div class="contentZone"><div class="footerTextZone"><p class="footerTitle">Ностальгия через фотографию</p><p class="footerCopy">© 2025–2026, Кучев Павел З-МД-20</p></div></div></footer>
+
+	<div class="lightbox" id="lightbox" aria-hidden="true">
+		<button class="lightboxClose" id="lightboxClose" aria-label="Закрыть изображение">×</button>
+		<button class="lightboxArrow lightboxArrowPrev" id="lightboxPrev" aria-label="Предыдущее изображение"><span></span></button>
+		<div class="lightboxContent"><img class="lightboxImage" id="lightboxImage" src="#" alt=""><p class="lightboxCaption" id="lightboxCaption"></p></div>
+		<button class="lightboxArrow lightboxArrowNext" id="lightboxNext" aria-label="Следующее изображение"><span></span></button>
+	</div>
+
+	<script src="js/main.js"></script>
+</body>
+</html>
